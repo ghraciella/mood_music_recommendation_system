@@ -27,7 +27,7 @@ body {
 }
 
 .header {
-    background-image: url('../images/slides-background.jpg');
+    background-image: url('../images/slides-background1.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -61,6 +61,17 @@ body {
     background:#f08144;
     color:#2b2960;
 }
+
+/* Customize Font and Hovering for Label and Links: */
+a.nav-link:hover, 
+a.navbar-brand:hover {
+    color:#f08144;
+}
+
+a.navbar-brand {
+    color:#fff;
+}
+
 
 
 

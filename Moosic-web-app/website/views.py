@@ -7,5 +7,10 @@ views = Blueprint('views', __name__)
 
 # Define a view
 @views.route('/')
-def home():
+def index():
     return  render_template('index.html')
+
+
+@views.route('/try-me')
+def try_me():
+    return render_template('try-me.html')
