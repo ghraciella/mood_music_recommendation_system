@@ -5,12 +5,12 @@ body {
 }
 
 .navbar {
-    background:#2b2960;
+    background:#DFB2F4;
 }
 
 .nav-link,
 .navbar-brand {
-    color: #fff;
+    color: #F5EBE0;
     cursor: pointer;
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #f08144;
+    color: #DFB2F4;
 }
 
 .navbar-collapse {
@@ -27,7 +27,7 @@ body {
 }
 
 .header {
-    background-image: url('../images/slides-background1.jpg');
+    background-image: url('../images/background_4.avif');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -42,30 +42,30 @@ body {
 	text-align: center;
 }
 .description h1 {
-	color: #2b2960;
+	color: #F5EBE0;
 }
 .description p {
-	color: #f08144;
+	color: #F5EBE0;
 	font-size: 1.3rem;
 	line-height: 1.5;
 }
 
 .description button {
-    border:1px solid #fff4d5;
-    background:#fff4d5;
+    border:1px solid #F5EBE0;
+    background:#F5EBE0;
     border-radius: 0;
-    color:#2b2960;
+    color:#F5EBE0;
 }
 .description button:hover {
-	border:1px solid #f08144;
-    background:#f08144;
-    color:#2b2960;
+	border:1px solid #F5EBE0;
+    background:#F5EBE0;
+    color:#F5EBE0;
 }
 
 /* Customize Font and Hovering for Label and Links: */
 a.nav-link:hover, 
 a.navbar-brand:hover {
-    color:#f08144;
+    color:#F5EBE0;
 }
 
 a.navbar-brand {
