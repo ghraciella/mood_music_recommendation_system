@@ -1,16 +1,21 @@
 body {
     padding: 0;
     margin: 0;
-    background: #fff4d5;
+    background-image: url('../images/background_4.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
 }
 
 .navbar {
-    background:#DFB2F4;
+    background:#DFB2F440;  /*last two numbers make it transparent*/
+    /*opacity: .75;*/
 }
 
 .nav-link,
 .navbar-brand {
-    color: #F5EBE0;
+    color: #000000;
     cursor: pointer;
 }
 
@@ -26,12 +31,15 @@ body {
     justify-content: flex-end;
 }
 
+/*
 .header {
     background-image: url('../images/background_4.avif');
     background-size: cover;
     background-position: center;
     position: relative;
+    opacity: .75;
 }
+*/
 
 
 .description {
@@ -42,12 +50,14 @@ body {
 	text-align: center;
 }
 .description h1 {
-	color: #F5EBE0;
+	color: #000000;
+    opacity: .75;
 }
 .description p {
-	color: #F5EBE0;
+	color: #000000;
 	font-size: 1.3rem;
 	line-height: 1.5;
+    opacity: .75;
 }
 
 .description button {
@@ -69,9 +79,14 @@ a.navbar-brand:hover {
 }
 
 a.navbar-brand {
-    color:#fff;
+    color:#000000;
 }
 
 
+.layer {
 
+}
 
+.flip {
+    transform: rotate(180deg);
+}
