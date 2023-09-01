@@ -10,3 +10,17 @@ var ready = (callback) => {
 ready(() => {
     document.querySelector(".header").style.height = window.innerHeight + "px";
 })
+
+const showSignUp = () => {
+    const form = document.querySelector("#sign-up-form");
+    form.style.zIndex = 1000;
+    form.hidden = false;
+
+}
+
+const showLogIn = () => {
+    const form = document.querySelector("#log-in-form");
+    form.style.zIndex = 1000;
+    form.hidden = false;
+
+}

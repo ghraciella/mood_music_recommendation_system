@@ -20,21 +20,32 @@
 
     <!--Create a Navbar for user navigation-->
     <nav class="navbar navbar-expand-md">
-        <a class="navbar-brand" href="#">Home</a>
+        <!-- MAke event on click for back-to-home-->
+        <a class="nav-link" onclick="showIndex()">Home</a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign Up</a>
+                    <!-- Make event on click for sign up select box-->
+                    <a class="nav-link" onclick="showSignUp()">Sign Up</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sign In</a>
+                    <!-- Make event on click for log in select box-->
+                    <a class="nav-link" onclick="showLogIn()">Log In</a>
                 </li>
             </ul>
         </div>
     </nav>
+    
+
+    <!--Sign-Up-->
+    {% include "sign-up.html" %}
+
+    <!--Log-In-->
+    {% include "log-in.html" %}
+
 
     <!--Page content will go into this block from the child page-->
     {% block content %}{% endblock %}
