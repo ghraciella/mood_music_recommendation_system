@@ -10,7 +10,8 @@ body {
 
 
 .navbar {
-    background:#DFB2F440;  /*last two numbers make it transparent*/
+    background: #DFB2F440;
+    /*last two numbers make it transparent*/
     /*opacity: .75;*/
 }
 
@@ -44,49 +45,50 @@ body {
 
 
 .description {
-	left: 50%;
-	position: absolute;
-	top: 45%;
-	transform: translate(-50%, -55%);
-	text-align: center;
+    left: 50%;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -55%);
+    text-align: center;
 }
+
 .description h1 {
-	color: #000000;
+    color: #000000;
     opacity: .75;
 }
+
 .description p {
-	color: #000000;
-	font-size: 1.3rem;
-	line-height: 1.5;
-    opacity: .75;
+    color: #000000;
+    font-size: 1.3rem;
+    line-height: 1.5;
+    opacity: .7;
 }
 
 .description button {
-    border:1px solid #F5EBE0;
-    background:#F5EBE0;
+    border: 1px solid #F5EBE0;
+    background: #F5EBE0;
     border-radius: 0;
-    color:#F5EBE0;
+    color: #F5EBE0;
 }
+
 .description button:hover {
-	border:1px solid #F5EBE0;
-    background:#F5EBE0;
-    color:#F5EBE0;
+    border: 1px solid #F5EBE0;
+    background: #F5EBE0;
+    color: #F5EBE0;
 }
 
 /* Customize Font and Hovering for Label and Links: */
-a.nav-link:hover, 
+a.nav-link:hover,
 a.navbar-brand:hover {
-    color:#F5EBE0;
+    color: #F5EBE0;
 }
 
 a.navbar-brand {
-    color:#000000;
+    color: #000000;
 }
 
 
-.layer {
-
-}
+.layer {}
 
 .flip {
     transform: rotate(180deg);
@@ -107,11 +109,26 @@ a.navbar-brand {
 }
 
 /* change padding for buttons sign up and log in */
-.pl-5, .px-5 {
+.pl-5,
+.px-5 {
     padding-left: 2rem !important;
 }
 
-.pr-5, .px-5 {
+.pr-5,
+.px-5 {
     padding-right: 2rem !important;
 }
 
+#prompt {
+    color: #000000;
+    text-align: center;
+    margin-top: 25px;
+    opacity: .6;
+}
+
+.mood-text {
+    fill: #FFC1C1;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 25px;
+}
