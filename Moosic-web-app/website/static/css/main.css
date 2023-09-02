@@ -114,3 +114,8 @@ a.navbar-brand {
 .pr-5, .px-5 {
     padding-right: 2rem !important;
 }
+
+#mood-bubbles {
+    height: 1200px;
+    opacity: .9;
+}
