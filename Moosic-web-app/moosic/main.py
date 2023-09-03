@@ -6,7 +6,7 @@ from flask_appbuilder import AppBuilder
 from flask_appbuilder.security.sqla.models import User, Role
 from moosic.db import db, tune_sqlite
 from moosic.config import FlaskConfig
-from moosic.views import Views
+from moosic.views import MoosicViews, MoosicIndexViews
 
 
 def is_admin() -> bool:
@@ -20,7 +20,7 @@ def is_admin() -> bool:
     return False
 
 
-appbuilder = AppBuilder(indexview=Views)
+appbuilder = AppBuilder(indexview=MoosicIndexViews)
 
 
 def create_app() -> Flask:
@@ -47,6 +47,6 @@ def create_app() -> Flask:
         appbuilder.init_app(app, db.session)  # Flask App Builder gets initialized with our Flask App and SQL Alchemy interface
         # init_errorhandlers(appbuilder)
 
-        appbuilder.add_view(Views, "Views")
+        appbuilder.add_view(MoosicViews, "MoosicViews")
 
     return app

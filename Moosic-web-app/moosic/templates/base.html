@@ -23,30 +23,38 @@
     <!--Create a Navbar for user navigation-->
     <nav class="navbar navbar-expand-md">
         <!-- MAke event on click for back-to-home-->
-        <a class="nav-link" onclick="showIndex()">Home</a>
+        <a class="nav-link" href="/">Home</a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="navbar-nav">
+                {% if current_user.is_anonymous %}
                 <li class="nav-item">
                     <!-- Make event on click for sign up select box-->
-                    <a class="nav-link" onclick="showSignUp()">Sign Up</a>
+                    <a class="nav-link" href="/register/form">Sign Up</a>
                 </li>
                 <li class="nav-item">
                     <!-- Make event on click for log in select box-->
-                    <a class="nav-link" onclick="showLogIn()">Log In</a>
+                    <a class="nav-link" href="/login/">Log In</a>
                 </li>
+                {% else %}
+                <li class="nav-item">
+                    <span class="moosic-user-name">Hello, {{ g.user.get_full_name() }}</span>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>
     
 
     <!--Sign-Up-->
+    {# 
     {% include "sign-up.html" %}
 
     <!--Log-In-->
     {% include "log-in.html" %}
+    #}
 
 
     <!--Page content will go into this block from the child page-->

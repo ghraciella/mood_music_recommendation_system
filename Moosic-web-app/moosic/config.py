@@ -24,7 +24,7 @@ class FlaskConfig:
     STATIC_DIR = APP_DIR / "static"
     IMG_DIR = STATIC_DIR / "images"
     TEMPLATES_DIR = APP_DIR / "templates"
-    FAB_BASE_TEMPLATE = "base.html"
+    # FAB_BASE_TEMPLATE = "base.html"
     APP_DB = APP_DIR.parent / "app.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     CSRF_ENABLED = True
@@ -38,6 +38,8 @@ class FlaskConfig:
     BABEL_DEFAULT_FOLDER = "translations"
     # The allowed translation for you app
     LANGUAGES: dict[str, dict[str, str]] = {}
+    RECAPTCHA_ENABLED = False
+    RECAPTCHA_PUBLIC_KEY =''
 
 
     # APP_THEME = "united.css"

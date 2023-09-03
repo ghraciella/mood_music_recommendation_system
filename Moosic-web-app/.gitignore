@@ -344,4 +344,7 @@ pip-selfcheck.json
 # Ignore app.db
 app.db
 
+
+
+
 # End of https://www.toptal.com/developers/gitignore/api/python,macos,visualstudiocode,linux,venv,flask

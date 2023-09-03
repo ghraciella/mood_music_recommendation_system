@@ -17,7 +17,7 @@ body {
 
 .nav-link,
 .navbar-brand {
-    color: #000000;
+    color: #DFB2F4;
     cursor: pointer;
 }
 
@@ -131,4 +131,8 @@ a.navbar-brand {
     font-size: 36px;
     text-align: center;
     margin-top: 25px;
+}
+
+.moosic-user-name {
+    color: #DFB2F4;
 }
