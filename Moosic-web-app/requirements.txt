@@ -1,1 +1,1 @@
-Flask==2.3.2
+Flask-AppBuilder==4.3.6
