@@ -120,19 +120,44 @@ a.navbar-brand {
 }
 
 #prompt {
-    color: #000000;
+    color: #001122;
     text-align: center;
-    margin-top: 25px;
-    opacity: .6;
+    margin-top: 100px;
+    opacity: .7;
 }
 
 .mood-text {
-    fill: #FFC1C1;
+    fill: #001122;
     font-size: 36px;
     text-align: center;
     margin-top: 25px;
 }
 
+g:hover {
+    color: #DFB2F4;
+}
+
 .moosic-user-name {
     color: #DFB2F4;
 }
+
+#genre-carousel, #mood-carousel {
+    text-align: center;
+    font-size: 100px;
+    color: #001122;
+}
+
+
+#choose-mood-button {
+    text-align: center;
+    opacity: .7;
+}
+
+#prompt {
+    text-align: center;
+    color: #001122;
+    opacity: .7;
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+
