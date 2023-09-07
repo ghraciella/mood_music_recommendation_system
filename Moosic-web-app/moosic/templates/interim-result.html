@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}MOOSIC{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-12">
+        <text>
+            <h2 id="prompt-results">Choose a track</h2>
+        </text>
+    </div>
+</div>
+
+
+{# Loop result #}
+
+<div class="row">
+    <div class="col-sm-12">
+        {# Next Button #}
+        <div class="result-button">
+            {# activate the model with saved variables #}
+            <a class="btn btn-outline-dark" href="{{url_for('MoosicViews.end_result')}}" role="button"
+                id="show-me-button" onclick="save_genre();" >
+                Track</a>
+        </div>
+    </div>
+</div>
+
+
+{% for track in results %}
+data-track="{{track}}"
+{%endfor%}
+
+{% endblock %}

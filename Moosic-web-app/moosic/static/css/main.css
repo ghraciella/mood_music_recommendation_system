@@ -147,7 +147,8 @@ g:hover {
     opacity: .7;
 }
 
-#prompt {
+#prompt-choose-genre-mood, 
+#prompt-results {
     text-align: center;
     color: #001122;
     opacity: .9;
@@ -155,9 +156,16 @@ g:hover {
     margin-bottom: 0px;
 }
 
+
 .button-position {
     margin-top: 10px;
     left: 50%;
+    text-align: center;
+}
+
+.result-button {
+    margin-top: 100px;
+    position: center;
     text-align: center;
 }
 

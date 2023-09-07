@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-sm-6">
 
-        <h2 class="position-relative" id="prompt">
+        <h2 class="position-relative" id="prompt-choose-genre-mood">
             1. Choose your Genre
         </h2>
 
@@ -18,7 +18,7 @@
                 <div class="carousel-item {{ 'active' if loop.index == 1 else '' }}">
                     {# View Box #}
                     <svg id="visual" viewBox="0 0 800 800" width="500" height="500" style="display: block; margin: auto"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" onclick="save_genre();">
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                         {% include('blobs/genre/blob'~blob_id~'.html') %}
                     </svg>
                 </div>
@@ -39,7 +39,7 @@
 
     <div class="col-sm-6">
 
-        <h2 class="position-relative" id="prompt">
+        <h2 class="position-relative" id="prompt-choose-genre-mood">
             2. Choose your Mood Goal
         </h2>
 
@@ -53,7 +53,7 @@
                 <div class="carousel-item {{ 'active' if loop.index == 1 else '' }}">
                     {# View Box #}
                     <svg id="visual" viewBox="0 0 800 800" width="500" height="500" style="display: block; margin: auto"
-                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" onclick="save_mood();">
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                         {% include('blobs/mood/blob'~blob_id~'.html') %}
                     </svg>
                 </div>
@@ -81,7 +81,7 @@
         {# Next Button #}
         <div class="button-position">
             {# activate the model with saved variables #}
-        <a class="btn btn-outline-secondary" href="{{url_for('MoosicViews.results')}}" role="button" id="show-me-button">Show me
+        <a class="btn btn-outline-dark" href="{{url_for('MoosicViews.interim_result')}}" role="button" id="show-me-button" onclick="save_genre();">Show me
             my tracks</a>
         </div>
     </div>

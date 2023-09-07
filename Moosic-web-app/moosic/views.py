@@ -21,9 +21,13 @@ class MoosicViews(BaseView):
     def choose_genre_mood(self):
         return render_template('choose-genre-mood.html', genres=self.genres)
     
-    @expose('/results')
-    def results(self):
-        return render_template('results.html')
+    @expose('/interim-result')
+    def interim_result(self):
+        return render_template('interim-result.html')
+    
+    @expose('/end-result')
+    def end_result(self):
+        return render_template('end-result.html')
     
 
     @expose('/list/')
