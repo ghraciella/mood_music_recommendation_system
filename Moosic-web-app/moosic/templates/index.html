@@ -2,28 +2,23 @@
 {% block title %}MOOSIC{% endblock %}
 
 
-<!-- LANDING PAGE -->
+{# LANDING PAGE #}
 
 {% block content %}
-<!--<header class="page-header header container-fluid">-->
 
-    <div class="description">
-        <!--Description Landing Page-->
-        
-        <p></p>
+<div class="description">
+    {# Description Landing Page #}
+    <p></p>
 
-        <img src="/static/images/logo.png" id="logo">
-        <p></p>
-        <p>The engine that suggests music based on your mood.</p>
-        <p></p>
-        
-        <!--Try me button-->
-        <a class="btn btn-outline-secondary" href="{{url_for('MoosicViews.choose_genre_mood')}}" role="button">Try me!</a>
+    <img src="/static/images/logo.png" id="logo">
+    <p></p>
+    <p>The engine that suggests music based on your mood.</p>
+    <p></p>
 
-    </div>
+    {# Try me button #}
+    <a class="btn btn-outline-secondary" href="{{url_for('MoosicViews.choose_genre_mood')}}" role="button">Try me!</a>
 
-<!--</header>-->
-{% endblock %}   
+</div>
 
-
-
+{# header #}
+{% endblock %}

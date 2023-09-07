@@ -17,7 +17,7 @@ body {
 
 .nav-link,
 .navbar-brand {
-    color: #DFB2F4;
+    color: #001122;
     cursor: pointer;
 }
 
@@ -72,15 +72,15 @@ body {
 }
 
 .description button:hover {
-    border: 1px solid #F5EBE0;
-    background: #F5EBE0;
-    color: #F5EBE0;
+    border: 1px solid #001122;
+    background: #001122;
+    color: #001122;
 }
 
 /* Customize Font and Hovering for Label and Links: */
 a.nav-link:hover,
 a.navbar-brand:hover {
-    color: #F5EBE0;
+    color: #DFB2F4;
 }
 
 a.navbar-brand {
@@ -119,12 +119,6 @@ a.navbar-brand {
     padding-right: 2rem !important;
 }
 
-#prompt {
-    color: #001122;
-    text-align: center;
-    margin-top: 100px;
-    opacity: .7;
-}
 
 .mood-text {
     fill: #001122;
@@ -156,8 +150,28 @@ g:hover {
 #prompt {
     text-align: center;
     color: #001122;
-    opacity: .7;
-    margin-top: 100px;
+    opacity: .9;
+    margin-top: 50px;
     margin-bottom: 0px;
 }
 
+.button-position {
+    margin-top: 10px;
+    left: 50%;
+    text-align: center;
+}
+
+.carousel-control-next,
+.carousel-control-prev  {
+    position: absolute;
+    top: 17%; /* pushes the icon in the middle of the height */
+    z-index: 5;
+    display: inline-block;
+    filter: invert(100%);
+    }
+
+
+@font-face {
+    font-family: 'Montserrat', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+}
