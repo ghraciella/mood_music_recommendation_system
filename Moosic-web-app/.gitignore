@@ -341,4 +341,7 @@ pip-selfcheck.json
 # Ignore secret_key
 .secret_key
 
+# Ignore app.db
+app.db
+
 # End of https://www.toptal.com/developers/gitignore/api/python,macos,visualstudiocode,linux,venv,flask
