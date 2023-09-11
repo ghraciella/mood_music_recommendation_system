@@ -183,3 +183,7 @@ g:hover {
     font-family: 'Montserrat', sans-serif;
     src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
 }
+
+#test {
+    text-align: center;
+}

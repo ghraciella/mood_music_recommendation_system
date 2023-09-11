@@ -33,3 +33,8 @@ class MoosicViews(BaseView):
     @expose('/list/')
     def list(self):
         return ""
+    
+    
+    @expose('/test-genre-mood)')
+    def test_genre_mood():
+        return render_template
