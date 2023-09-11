@@ -5,20 +5,40 @@
 {# LANDING PAGE #}
 
 {% block content %}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="description">
+            {# Description Landing Page #}
+            <p></p>
+        </div>
+    </div>
+</div>
 
-<div class="description">
-    {# Description Landing Page #}
-    <p></p>
+<div class="row">
+    <div class="col-sm-12">
+        <img src="/static/images/logo.png" id="logo">
+        <p></p>
+    </div>
+</div>
 
-    <img src="/static/images/logo.png" id="logo">
-    <p></p>
-    <p>Yor Mood.</p>
-    <p>Your Music</p>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="slogan">
+            <p>Your Mood.</p>
+            <p>Your Music.</p>
+        </div>
+    </div>
+</div>
 
 
-    {# Try me button #}
-    <a class="btn btn-outline-dark" href="{{url_for('MoosicViews.choose_genre_mood')}}" role="button">Try me!</a>
-
+{# Try me button #}
+<div class="row">
+    <div class="col-sm-12">
+        <div class="try-my-button">
+            <a class="btn btn-outline-dark" href="{{url_for('MoosicViews.choose_genre_mood')}}" role="button">Try
+                me!</a>
+        </div>
+    </div>
 </div>
 
 {# header #}

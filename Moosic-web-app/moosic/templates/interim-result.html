@@ -17,18 +17,16 @@
 <div class="row">
     <div class="col-sm-12">
         {# Next Button #}
+        {% for track in results %}
         <div class="result-button">
             {# activate the model with saved variables #}
-            <a class="btn btn-outline-dark" href="{{url_for('MoosicViews.end_result')}}" role="button"
-                id="show-me-button" onclick="save_genre();" >
-                Track</a>
+            <a class="btn btn-outline-dark" href="" role="button"
+                id="show-me-button" onclick="showEndresults('{{ track['artist'] | base64 }}', '{{ track['name'] | base64 }}');" >
+                {{ track['artist'] }} {{ track['name'] }}</a>
         </div>
+        {% endfor %}
     </div>
 </div>
 
-
-{% for track in results %}
-data-track="{{track}}"
-{%endfor%}
 
 {% endblock %}

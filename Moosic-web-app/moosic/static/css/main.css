@@ -43,6 +43,14 @@ body {
 }
 */
 
+#logo {
+    position: relative;
+    text-align: center;
+}
+
+.try-me-button {
+    position: inherit;
+}
 
 .description {
     left: 50%;
@@ -59,8 +67,8 @@ body {
 
 .description p {
     color: #000000;
-    font-size: 1.3rem;
-    line-height: 1.5;
+    font-size: 24px;
+    line-height: 0.5;
     opacity: .7;
 }
 

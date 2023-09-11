@@ -1,7 +1,8 @@
 # Save the routes where our users can go to on our page
 # Everything that isn't related to authentication (like login) comes in here
-from flask import render_template
+from flask import render_template, request
 from flask_appbuilder import expose, BaseView, IndexView
+from moosic.predictions import get_interim_results
 
 class MoosicIndexViews(IndexView):
     route_base = '/'
@@ -35,6 +36,10 @@ class MoosicViews(BaseView):
         return ""
     
     
-    @expose('/test-genre-mood)')
-    def test_genre_mood():
-        return render_template
+    @expose('/predict')
+    def predict_tracks(self):
+        # FIXME validate args
+        genre = request.args.get('genre')
+        mood = request.args.get('mood')
+        results = get_interim_results(None, genre, mood)  # Insert model at placeholder None
+        return render_template('interim-result.html', results=results)

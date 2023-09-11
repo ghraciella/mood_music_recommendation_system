@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+from base64 import b64encode
 from flask import Flask, g  # g is global variable that will be initialized for every request (user endpoint access)
 from flask_appbuilder import AppBuilder
 from flask_appbuilder.security.sqla.models import User, Role
@@ -37,6 +38,10 @@ def create_app() -> Flask:
         "is_admin": is_admin,
     }
     app.context_processor(lambda: jinja_env)
+
+    @app.template_filter("base64")
+    def base64_filter(text: str) -> str:
+        return b64encode(text.encode()).decode()
 
     # Open pseudo request for initializing app builder and SQL Alchemy
     with app.app_context():
