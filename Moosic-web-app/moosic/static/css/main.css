@@ -44,21 +44,18 @@ body {
 */
 
 #logo {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width:300px;
+    z-index: -100;
     position: relative;
-    text-align: center;
 }
 
 .try-me-button {
+    padding-top: 50px;
     position: inherit;
 }
 
-.description {
-    left: 50%;
-    position: absolute;
-    top: 45%;
-    transform: translate(-50%, -55%);
-    text-align: center;
-}
 
 .description h1 {
     color: #000000;
@@ -68,7 +65,7 @@ body {
 .description p {
     color: #000000;
     font-size: 24px;
-    line-height: 0.5;
+    line-height: 1;
     opacity: .7;
 }
 
@@ -166,7 +163,6 @@ g:hover {
 
 
 .button-position {
-    margin-top: 10px;
     left: 50%;
     text-align: center;
 }

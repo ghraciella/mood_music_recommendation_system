@@ -2,7 +2,7 @@
 # Everything that isn't related to authentication (like login) comes in here
 from flask import render_template, request
 from flask_appbuilder import expose, BaseView, IndexView
-from moosic.predictions import get_interim_results
+from moosic.predictions import get_results
 
 class MoosicIndexViews(IndexView):
     route_base = '/'
@@ -22,24 +22,16 @@ class MoosicViews(BaseView):
     def choose_genre_mood(self):
         return render_template('choose-genre-mood.html', genres=self.genres)
     
-    @expose('/interim-result')
-    def interim_result(self):
-        return render_template('interim-result.html')
-    
-    @expose('/end-result')
-    def end_result(self):
-        return render_template('end-result.html')
-    
 
     @expose('/list/')
     def list(self):
         return ""
     
     
-    @expose('/predict')
+    @expose('/result')
     def predict_tracks(self):
         # FIXME validate args
         genre = request.args.get('genre')
         mood = request.args.get('mood')
-        results = get_interim_results(None, genre, mood)  # Insert model at placeholder None
-        return render_template('interim-result.html', results=results)
+        results = get_results(None, genre, mood)  # Insert model at placeholder None
+        return render_template('result.html', results=results)

@@ -3,13 +3,14 @@
 
 {% block content %}
 
+<h2 class="position-relative" id="prompt-choose-genre-mood">
+    Choose your Genre and your Mood goal
+</h2>
+
 {# Grid System 2 rows with two and one columns #}
 <div class="row">
     <div class="col-sm-6">
 
-        <h2 class="position-relative" id="prompt-choose-genre-mood">
-            1. Choose your Genre
-        </h2>
 
         {#Start Genre Carousel#}
         <div id="genre-carousel" class="carousel slide" data-interval="false" data-ride="carousel" data-pause="hover">
@@ -23,6 +24,8 @@
                     </svg>
                 </div>
                 {% endfor %}
+
+
 
             </div>
             <a class="carousel-control-prev" href="#genre-carousel" role="button" data-slide="prev">
@@ -39,9 +42,6 @@
 
     <div class="col-sm-6">
 
-        <h2 class="position-relative" id="prompt-choose-genre-mood">
-            2. Choose your Mood Goal
-        </h2>
 
 
 
@@ -88,7 +88,6 @@
     </div>
 </div>
 
-{{url_for('MoosicViews.interim_result')}}
 
 {# ANIMATION START #}
 {# <div class="spacer layer flip"></div>

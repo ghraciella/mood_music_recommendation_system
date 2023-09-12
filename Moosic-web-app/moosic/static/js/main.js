@@ -1,16 +1,3 @@
-$(document).ready(function () {
-    $('.header').height($(window).height());
-})
-
-
-var ready = (callback) => {
-    if (document.readyState != "loading") callback();
-    else document.addEventListener("DOMContentLoaded", callback);
-}
-ready(() => {
-    document.querySelector(".header").style.height = window.innerHeight + "px";
-})
-
 const showSignUp = () => {
     const form = document.querySelector("#sign-up-form");
     form.style.zIndex = 1000;
@@ -32,7 +19,7 @@ const findGenreMood = () => [...document.querySelectorAll('div.carousel-item.act
 const loadInterimResults = () => {
     const [genre, mood] = findGenreMood();
     //postData('/predict', {genre: genre, mood: mood})
-    const url = `/predict?genre=${genre}&mood=${mood}`;
+    const url = `/result?genre=${genre}&mood=${mood}`;
     window.open(url);
 }
 
