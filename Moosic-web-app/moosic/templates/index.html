@@ -8,23 +8,45 @@
 
 
 <div style="text-align: center;">
-    <img src="/static/images/logo.png" id="logo">
+    <img src="/static/images/Logo_grey_moosic.png" id="logo">
 </div>
 
-
+<!--
 <div class="description" style="text-align: center;">
     <p>Your Mood.</p>
     <p>Your Music.</p>
 </div>
+-->
+
+{#
+<div class="box">
+    <div class="slide-in-text" id="slide-in-text">
+        <marquee behavior="slide" direction="left">Your Mood. Your Music.</marquee>
+    </div>
+</div>
+#}
+
+<div class="text" style="text-align: center;">
+    <!--<h1 style="background-color: aqua;">Your Mood.</h1>-->
+    <!--<h1 style="background-color: aqua;">Your Music.</h1>-->
+    <h1>Your Mood.</h1>
+    <h1>Your Music.</h1>
+</div>
+
 
 
 
 {# Try me button #}
 
-        <div class="try-me-button" style="text-align: center;">
+<!--<div class="try-me-button" style="text-align: center;">
             <a class="btn btn-outline-dark" href="{{url_for('MoosicViews.choose_genre_mood')}}" role="button">Try
                 me!</a>
-        </div>
+        </div>-->
+<div class="try-me" style="text-align: center;">
+    <a class="button" href="{{url_for('MoosicViews.choose_genre_mood')}}">
+        <button>Try me!</button>
+    </a>
+</div>
 
 
 {# header #}
