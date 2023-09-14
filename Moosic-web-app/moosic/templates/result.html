@@ -18,10 +18,11 @@
     <div class="col-sm-12">
         {# Next Button #}
         {% for track in results %}
-        <div class="result-button">
+        <div class="try-me" style="text-align: center;">
             {# activate the model with saved variables #}
-            <a class="btn btn-outline-dark" href="https://open.spotify.com/track/{{ results['track_id'] }}" role="button">
-                {{ results['artist_name'] }} - {{ results['track_name'] }}</a>
+            <a class="button" href="https://open.spotify.com/track/{{ track['track_id'] }}">
+                <button>{{ track['artist_name'] }} - {{ track['track_name'] }}</button>
+            </a>
         </div>
         {% endfor %}
     </div>

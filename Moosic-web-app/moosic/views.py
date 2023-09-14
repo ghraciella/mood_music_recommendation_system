@@ -32,8 +32,7 @@ class MoosicViews(BaseView):
     @expose('/result')
     def predict_tracks(self):
         # FIXME validate args
-        model = request.args.get('recommended_moosic_playlist')
         genre = request.args.get('genre')
         mood = request.args.get('mood')
-        results = get_results(model, genre, mood)  # Insert model at placeholder None
+        results = get_results(genre, mood)  
         return render_template('result.html', results=results)
