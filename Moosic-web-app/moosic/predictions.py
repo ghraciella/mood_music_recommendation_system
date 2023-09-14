@@ -16,6 +16,5 @@ def get_results(model, genre: str, mood: str):
     # Filter
     recommended_moosic_playlist = df2[['track_id', 'track_name', 'artist_name']].iloc[moosic_randomN_idx]
 
-    # return recommended_moosic_playlist
-    print(recommended_moosic_playlist)
+    return recommended_moosic_playlist
 

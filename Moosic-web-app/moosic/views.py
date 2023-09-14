@@ -4,6 +4,7 @@ from flask import render_template, request
 from flask_appbuilder import expose, BaseView, IndexView
 from moosic.predictions import get_results
 
+
 class MoosicIndexViews(IndexView):
     route_base = '/'
     index_template = 'index.html'
@@ -31,7 +32,8 @@ class MoosicViews(BaseView):
     @expose('/result')
     def predict_tracks(self):
         # FIXME validate args
+        model = request.args.get('recommended_moosic_playlist')
         genre = request.args.get('genre')
         mood = request.args.get('mood')
-        results = get_results(None, genre, mood)  # Insert model at placeholder None
+        results = get_results(model, genre, mood)  # Insert model at placeholder None
         return render_template('result.html', results=results)
