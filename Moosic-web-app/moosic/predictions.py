@@ -1,8 +1,21 @@
-# Insert model here:
+import pickle
+import numpy as np
 
-# dummy function
+
+# dump dataframe here:
+with open('df2.bin', 'rb') as f:
+    df2 = pickle.load(f)
+
 def get_results(model, genre: str, mood: str): 
-    # make dummy list (artist,song)
-    tracks = [{'artist': 'Disturbed', 'name': "Down with the Sickness", 'id': '1jJxMXKtkD9weHJxgyXV0j'}]
-    # shows 5 tracks
-    return tracks
+# Random choice
+    moosic_randomN_idx = np.random.choice(
+                                df2.index,
+                                size = 5, #playlist_length,
+                                replace= False #random n = 5
+                                )
+    # Filter
+    recommended_moosic_playlist = df2[['track_id', 'track_name', 'artist_name']].iloc[moosic_randomN_idx]
+
+    # return recommended_moosic_playlist
+    print(recommended_moosic_playlist)
+
