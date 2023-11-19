@@ -135,22 +135,28 @@ pip install -r requirements.txt
 
 mood_music_recommendation_system/
 │
-├── docker-compose.yml
-│
 ├── data/
 │   ├── raw_data/    # Raw data from source
 │   │   ├── tracks_data.csv
-│   │   ├── artist_data.csv
+│   │   ├── artists_data.csv
 │   │   └── affect_lexicons.csv
 │   │
 │   └── processed_data/  # Processed data for recommendation
 │       ├── embeddings/
 │       │   ├── track_embeddings.pkl
+│       │   ├── artist_embeddings.pkl
 │       │   └── user_embeddings.pkl
 │       │
 │       ├── tracks_data.csv
 │       ├── artist_data.csv
 │       └── affect_lexicons.csv
+│
+├── documentation/
+│   ├── moosic_brief_ideas.md          # Brainstorm and idea session - kickoff
+│   ├── data_model_overview.md         # data description
+│   ├── recommendation_engine.md        # 
+│   ├── process_documents.md        # 
+│   └── ... 
 │
 ├── images/               # Images
 │   ├── moosic_logo.png   
@@ -158,11 +164,12 @@ mood_music_recommendation_system/
 │   └── ...
 │
 │
-├── moosic_database (postgresql)/  # Data storage and management
-│   ├── moodsic_queries.sql
+├── moosic_database (postgresql)/  # Data storage and database management
+│   ├── moosic_database_init.sql   # Set up moosic database
+│   ├── moodsic_queries.sql        # SQL queries
 │   └── ...
 │
-├── moosic_recommendation_engine/
+├── moosic_recommendation_engine_src/ # Source files - notebooks, scripts
 │   ├── notebooks/
 │   │   ├── hypothesis_and_eda.ipynb
 │   │   ├── feature_engineering.ipynb
@@ -175,42 +182,36 @@ mood_music_recommendation_system/
 │       ├── moosic_models.py
 │       ├── utils.py
 │       ├── tests.py
+│       ├── sql_functions.py
 │       └── moosic_webapp.py
 │
-├── nifi/         # Data ingestion and migration
-│   ├── dags/
-│   │   └── moosic_workflow.py
-│   │   
-│   ├── airflow.cfg
-│   └── ...
 │
+├── services/                  # 
+│   ├── nifi/                  # Data ingestion and migration
+│   │   ├── nifi_flow_file.xml
+│   │   ├── ...
+│   │   └── ...
+│   │
+│   ├── airflow/         # Data workflow scheduling and orchestration for moosic
+│   │   ├── dags/
+│   │   │   └── moosic_workflow.py
+│   │   │   
+│   │   ├── airflow.cfg
+│   │   └── ...
+│   │
+│   ├── kafka/               # Data streaming 
+│   │   ├── ... 
+│   │   └── ...
+│   │
+│   └── spark/
+│      ├── ...
+│      └── ...
 │
-├── airflow/         # Data workflow orchestration
-│   ├── dags/
-│   │   └── moosic_workflow.py
-│   │   
-│   ├── airflow.cfg
-│   └── ...
-│
-├── kafka/               # Data streaming
-│   ├── (Kafka related files)
-│   └── ...
-│
-├── spark/
-│   ├── (Spark related files)
-│   └── ...
-│
-│
-├── documentation/
-│   ├── moosic_brief_ideas.md        # 
-│   ├── data_model_overview.md        # 
-│   ├── recommendation_engine.md        # 
-│   └── process_documents.md 
-│
-├── ...       
-├── README.md               # About project
-├── requirements.txt        # Dependencies file 
-└── requirements_dev.txt    # Dependencies file for dev
+├── ... 
+├── docker-compose.yml   # Configuration file - services and their interactions
+├── README.md            # About project
+├── requirements.txt     # Dependencies file 
+└── requirements_dev.txt # Dependencies file for dev
 ```
 
 
