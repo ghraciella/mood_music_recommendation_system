@@ -62,10 +62,10 @@ WHERE
 --            public.artist_spotify_data AS a
 --       ON
 --          t.id_artists = a.id;
-           
+
 
 --- create table 'spotify_data' with changed names
-                  
+
 CREATE TABLE public.spotify_data AS
 	SELECT t.id AS track_id,
 	         t.name AS track_name,

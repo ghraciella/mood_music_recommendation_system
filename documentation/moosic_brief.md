@@ -1,8 +1,6 @@
 #  __Moosic : Business Brief__
 
 
-![Alt text](../images/image.png)
-
 
 
 ##  __Business goal, value, requirements and solutions__
@@ -74,6 +72,5 @@
 ---
 
 
-![Alt text](../images/image-1.png)
 
 
