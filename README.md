@@ -71,7 +71,7 @@ as a way to manage their mood based on their preference.
 
 <br>
 
-We are media - streaming lovers and we recognized the the importance of music for mood management and how it is an essential form of expression. We also talked about how unsatisfied we are with the music recommendations we get from Spotify or other music streaming platforms.
+We are media - streaming lovers, we recognized the importance of music for mood management and how it is an essential form of expression. We talked about how unsatisfied we are with the music recommendations we get from Spotify or other music streaming platforms.
 
 <br>
 
