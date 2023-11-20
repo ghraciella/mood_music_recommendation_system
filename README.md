@@ -2,7 +2,7 @@
 
 ## MOOSIC : Your Mood Based Music Recommendation System
 
-__Objective__ : In this repo we challenge ourselves for our as Data Practitioners to come up with a mood based recommendations system for music using Spotify track metadata to give users a better listening experience. 
+__Objective__ : In this repo we challenge ourselves as Data Practitioners to come up with a mood based recommendations system for music using Spotify track metadata to give users a better listening experience. 
 
 <br>
 
