@@ -29,6 +29,8 @@ as a way to manage their mood based on their preference.
 
 * Demo Presentation Slides of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Project Slides](/presentations/presentations/Moosic_Demo_Project_Slides.pdf)
 
+* Youtube Demo Video of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Video](https://youtu.be/kIyen_SHKwQ)
+
 <br>
 
 ---
@@ -39,6 +41,7 @@ as a way to manage their mood based on their preference.
 <div id="header" align="center">
   <img src= 'https://media.giphy.com/media/xTk9ZwzuWiyJ8n5Vzq/giphy.gif'>
 </div>
+
 
 <br>
 
