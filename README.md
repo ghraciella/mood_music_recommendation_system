@@ -29,6 +29,8 @@ as a way to manage their mood based on their preference.
 
 * Demo Presentation Slides of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Project Slides](/presentations/presentations/Moosic_Demo_Project_Slides.pdf)
 
+* Youtube Demo Video of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Video](https://youtu.be/kIyen_SHKwQ)
+
 <br>
 
 ---
@@ -39,6 +41,7 @@ as a way to manage their mood based on their preference.
 <div id="header" align="center">
   <img src= 'https://media.giphy.com/media/xTk9ZwzuWiyJ8n5Vzq/giphy.gif'>
 </div>
+
 
 <br>
 
@@ -68,7 +71,7 @@ as a way to manage their mood based on their preference.
 
 <br>
 
-We are media - streaming lovers and we recognized the the importance of music for mood management and how it is an essential form of expression. We also talked about how unsatisfied we are with the music recommendations we get from Spotify or other music streaming platforms.
+We are media - streaming lovers, we recognized the importance of music for mood management and how it is an essential form of expression. We talked about how unsatisfied we are with the music recommendations we get from Spotify or other music streaming platforms.
 
 <br>
 
