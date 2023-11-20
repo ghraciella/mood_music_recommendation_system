@@ -1,8 +1,16 @@
-# DP Capstone Project 
+# Data Practitioner Capstone Project 
 
-## About MOOSIC : Your Music Mood Based Recommendation System
+## MOOSIC : Your Mood Based Music Recommendation System
 
-__Objective__ : In this repo we challenge ourselves for our as Data Practitioners to come up with a mood based recommendations system for music using Spotify track metadata to give users a better listening experience. Our goals were
+__Objective__ : In this repo we challenge ourselves for our as Data Practitioners to come up with a mood based recommendations system for music using Spotify track metadata to give users a better listening experience. 
+
+<br>
+
+![moosic webapp homepage](/images/moosic-webapp-homepage.png)
+
+<br>
+
+Our goals were
 
 * Moosic platform - To create an end-to-end content based (mood and music) personalised recommendation system.
 * Mood preference - To create a music recommendation engine that allows users to select a mood goal. 
@@ -10,9 +18,23 @@ as a way to manage their mood based on their preference.
 * Genre preference - To give the users the option to choose a genre so we can give diverse listeners diverse recommendations.
 * Recommendations and experience - To prevent recommendations based on a dominant genre, repetitions and tracks that don’t fit the mood the users want to be in or achieve.
 
+<br>
+
+---
+
+### Website and Presentation 
+
+* Website of our data product - Moosic : [MOOSIC WebApp Link](https://moosic.winderling.net)
+
+
+* Demo Presentation Slides of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Project Slides](/presentations/presentations/Moosic_Demo_Project_Slides.pdf)
 
 <br>
 
+---
+
+
+<br>
 
 <div id="header" align="center">
   <img src= 'https://media.giphy.com/media/xTk9ZwzuWiyJ8n5Vzq/giphy.gif'>
@@ -20,11 +42,18 @@ as a way to manage their mood based on their preference.
 
 <br>
 
-### __Team__: __Rhythm Byte Engineers__
 
-* Christian 
-* Shahi 
-* Grace 
+### __Team Credits__: __Rhythm Byte Engineers__
+
+* Christian [Link](https://github.com/ChrisHabe)
+* Shahi [Link](https://github.com/ShahiW)
+* Grace [Link](https://ghraciella.github.io/)
+
+
+### Organization
+
+* Neuefische GmbH [Link](https://github.com/neuefische/)
+
 
 <br>
 
@@ -165,10 +194,31 @@ mood_music_recommendation_system/
 │
 │
 ├── moosic_database (postgresql)/  # Data storage and database management
+│   ├── init_moosic_public_schema.sql   # Set up moosic database
 │   ├── moosic_database_init.sql   # Set up moosic database
 │   ├── moodsic_queries.sql        # SQL queries
 │   └── ...
 │
+│
+├── moosic_website/  # Web application (WebApp) for our Moosic
+│   ├── moosic/
+│   │   ├── static/
+│   │   ├── templates/
+│   │   ├── __init.py__
+│   │   ├── config.py
+│   │   ├── db.py
+│   │   ├── main.py
+│   │   ├── models.py
+│   │   ├── predictions.py
+│   │   └── views.py
+│   │
+│   ├── .gitignore
+│   ├── app.py
+│   ├── df2.bin
+│   ├── README.md
+│   ├── requirements.txt
+│   └── setup-sqlite.sh
+│ 
 ├── moosic_recommendation_engine_src/ # Source files - notebooks, scripts
 │   ├── notebooks/
 │   │   ├── hypothesis_and_eda.ipynb
@@ -185,6 +235,11 @@ mood_music_recommendation_system/
 │       ├── sql_functions.py
 │       └── moosic_webapp.py
 │
+│
+├── presentations/               # Images
+│   ├── Moosic_Demo_Project_Slides.pdf   
+│   ├── Moosic_Demo_Project_Slides.pptx
+│   └── ...
 │
 ├── services/                  # 
 │   ├── nifi/                  # Data ingestion and migration
