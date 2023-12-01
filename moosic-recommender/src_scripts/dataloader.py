@@ -58,19 +58,6 @@ warnings.filterwarnings('ignore')
 
 
 
-# functions
-# - get data from csv or parquet or excel file
-# - get data from saved vector or embedded file formats : pkl , joblib, npy
-# - get data from api
-# - get data from postgres database
-# - get data from data vault or datalake or data warehouse 
-# - get data from datalake on cloud 
-# - data cleaning and transformation function
-# - saving data as vectors or embedding to be used later
-# - separate function that does all the above using pyspark and orchestrating with airflow 
-
-
-
 
 
 
