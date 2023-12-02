@@ -192,14 +192,16 @@ def get_conn_engine_psycopg(query, *args, **kwargs):
 
 
 
-def get_data_postgres_db(sql_query, conn_engine, driver=None, *args, **kwargs):
+def get_data_postgres_db(sql_query, conn_engine, chunk_size=15000, driver=None, *args, **kwargs):
     ''' 
     Get data using connection engine to connect to the PostgreSQL database server, 
 
     psycopg2 :
         - execute sql queries with a curser for the connection
         - call execute() method on cursor
-        - use of fetchall() to fetch all rows from executed query
+        - fetch data
+            - all: use of fetchall() to fetch all rows from executed query
+            - stream data in chunks: use of fetchmany() to fetch rows from executed query
         - close cursor and connection
         - return data as a pandas dataframe
 
@@ -213,9 +215,17 @@ def get_data_postgres_db(sql_query, conn_engine, driver=None, *args, **kwargs):
     if driver == 'psycopg2':
 
         con = conn_engine
-        cursor = con.cursor()
+        #cursor = con.cursor()
+        cursor = con.cursor(name='streaming_cursor', cursor_factory=psycopg2.extras.DictCursor)
+
         cursor.execute(sql_query)
-        data = cursor.fetchall()
+        #data = cursor.fetchall()
+
+        while True:
+            data = cursor.fetchmany(size=chunk_size)
+            if not data:
+                break
+
         cursor.close()
         con.close()
         data = pd.DataFrame(data)
