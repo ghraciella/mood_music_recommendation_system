@@ -28,7 +28,6 @@ as a way to manage their mood based on their preference.
 
 * Website of our data product - Moosic : [MOOSIC WebApp Link](https://moosic.winderling.net)
 
-
 * Demo Presentation Slides of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Project Slides](/presentations/Moosic_Demo_Project_Slides.pdf)
 
 * Youtube Demo Video of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Video](https://youtu.be/kIyen_SHKwQ)
