@@ -8,7 +8,7 @@ __Objective__ : In this repo we challenge ourselves as Data Practitioners to com
 
 <br>
 
-![moosic webapp homepage](/images/moosic-webapp-homepage.png)
+[![moosic webapp homepage](/images/moosic-webapp-homepage.png)](https://moosic.winderling.net)
 
 <br>
 
