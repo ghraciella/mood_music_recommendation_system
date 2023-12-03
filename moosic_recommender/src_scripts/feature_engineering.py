@@ -87,19 +87,6 @@ def mood_mapper(data, mood_map_dict, mood_features = ['valence', 'energy'], *arg
 
 
 
-def mood_quadrant_map(data):
-
-    features = ['valence', 'energy']
-
-    quadrant_map = {
-        'Q1': (0.5 <= data[features[0]]) & (data[features[0]] <= 1.0) & (0.5 <= data[features[1]]) & (data[features[1]] <= 1.0),
-        'Q2': (0.0 <= data[features[0]]) & (data[features[0]] <= 0.5) & (0.5 <= data[features[1]]) & (data[features[1]] <= 1.0),
-        'Q3': (0.0 <= data[features[0]]) & (data[features[0]] <= 0.5) & (0.0 <= data[features[1]]) & (data[features[1]] <= 0.5),
-        'Q4': (0.5 <= data[features[0]]) & (data[features[0]] <= 1.0) & (0.0 <= data[features[1]]) & (data[features[1]] <= 0.5)
-    }
-    labels = mood_mapper(data, quadrant_map, features)
-
-    return labels
 
 def mood_quadrant_map(data):
     """ 
