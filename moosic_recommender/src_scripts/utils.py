@@ -5,7 +5,6 @@ purpose:
 
 """
 
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 # Importing necessary libraries and modules for modelling
 
@@ -19,25 +18,16 @@ try:
 
 
     # split data - avoid data leakage
-    from sklearn.model_selection import train_test_split
-
+    from sklearn.model_selection import train_test_split, cross_val_score
 
     # cross validation, hyperparameter tuning
     from sklearn.model_selection import GridSearchCV, RandomizedSearchCV 
 
     # preprocessing, scaling
     from sklearn.preprocessing import MinMaxScaler, StandardScaler
-    from sklearn.preprocessing import MinMaxScaler
-
-    # high dimensional usage - dimensionality reduction
-    from sklearn.manifold import TSNE
-    from sklearn.decomposition import PCA
-    from umap import UMAP
-
 
     # pipeline
     from sklearn.pipeline import Pipeline
-    from sklearn.pipeline import make_pipeline
 
 
 except ImportError as error:
@@ -59,11 +49,7 @@ warnings.filterwarnings('ignore')
 
 # functions
 # -- get balanced data
-# -- split? function
-# -- data scaling - normalizing the data
-# -- dimensionality reduction (tsne, umap, pca)
-# -- hyperparameter tuning
-# -- 
+# -
 
 
 
@@ -112,53 +98,40 @@ def get_balanced_data(processed_dataset, sample_size = 20000, *args, **kwargs):
 
 
 
-# function to split dataset for modelling 
-# splitting dataset and also retain specific features to be outputted
 
-def split_dataset(dataset, target_feature = 'mood_goal', input_features = ['track_id', 'valence','energy', 'mood_goal'],  
-                        drop_features = ['track_id'], output_features = ['track_id', 'mood_goal'], *args, **kwargs): 
-    
+
+
+
+def cross_validation(X_data, y_data, method='randomsearch', param_grid= None, cv=5, n_iter=10,
+                        param_distributions= None, estimator= None, random_state= 42,  n_jobs=-1, *args, **kwargs):
+
+
     """
-    split dataset to avoid data leakage
-    
+    Model (estimator) selection : cross validation and hyperparameter tuning
+        - cross_val_score
+        - gridsearchcv
+        - randomsearchcv
+        - stratified kfold
+
+
     """
 
-    ## get list of moosic data features
-    #features = dataset.columns.tolist()
+    cv_search_methods = {
+        'cross_val_score': cross_val_score(estimator, param_grid, cv=cv, n_jobs=n_jobs),
+        'gridsearch': GridSearchCV(estimator, param_grid, cv=cv, n_jobs=n_jobs),
+        'randomsearch': RandomizedSearchCV(estimator, param_distributions, cv=cv, n_iter=n_iter, n_jobs=n_jobs),
+        #'stratifiedkfold': StratifiedKFold(n_splits=2, random_state=random_state)
 
-    # defining X (input feature vectors) and Y (target output features)
+    }
+
+    if method in cv_search_methods:
+        cv_search = cv_search(estimator, param_grid, cv=cv, n_jobs=n_jobs)
+        cv_search.fit(X_data, y_data)
+        return cv_search.best_params_, cv_search.best_score_ 
+    else:
+        raise ValueError(f" The CV technique '{method}' for hyperparameter search is not supported.")
 
 
-    X_data = dataset[input_features]
-
-    y_data = dataset['mood_goal']
-
-
-    # splitting the dataset into train and test
-
-    X_train, X_test, y_train, y_test = train_test_split(X_data, y_data, test_size=0.20, random_state=42, shuffle=True, stratify=y_data)
-
-    Y_train = X_train[output_features].reset_index(drop=True)
-    Y_test = X_test[output_features].reset_index(drop=True)
-
-    X_train = X_train[input_features].drop(drop_features, axis=1).reset_index(drop=True)
-    X_test =  X_test[input_features].drop(drop_features, axis=1).reset_index(drop=True)
-
-    y_train = Y_train[target_feature].reset_index(drop=True)
-    y_test = Y_test[target_feature].reset_index(drop=True)
-
-    data  = {
-        'X_data':X_data,
-        'y_data':y_data,
-        'X_train':X_train,
-        'X_test':X_test,
-        'y_train':y_train,
-        'y_test':y_test,        
-        'Y_train':Y_train,
-        'Y_test':Y_test,
-        }
-
-    return data
 
 
 
