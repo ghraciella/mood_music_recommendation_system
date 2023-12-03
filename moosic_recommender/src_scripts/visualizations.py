@@ -48,6 +48,18 @@ except ImportError as error:
 
 
 
+def hypothesis_testing():
+
+    pass
+
+
+def eda_():
+
+    pass
+
+
+
+
 def optimal_cluster_plot(data, tsne=True, *args, **kwargs):
 
     wcss_inertias = []

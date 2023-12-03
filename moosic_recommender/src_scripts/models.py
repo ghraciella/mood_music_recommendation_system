@@ -18,6 +18,11 @@ try:
     import random as rnd
 
 
+    # high dimensional usage - dimensionality reduction
+    from sklearn.manifold import TSNE
+    from sklearn.decomposition import PCA
+    from umap import UMAP
+
     # modelling - clustering
     from sklearn.cluster import KMeans, MiniBatchKMeans, MeanShift, DBSCAN
     from kmodes.kmodes import KModes
@@ -36,6 +41,8 @@ try:
     from sklearn.naive_bayes import GaussianNB, MultinomialNB
     from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier, GradientBoostingClassifier
 
+    # transformers - attention model
+    from transformers import BertTokenizer, BertModel, BertForTokenClassification
 
     # pipeline
     from sklearn.pipeline import Pipeline
@@ -53,12 +60,32 @@ except ImportError as error:
     subprocess.check_call(["pip", "install", "umap-learn"])
     subprocess.check_call(["pip", "install", "kmodes"])
     subprocess.check_call(["pip", "install", "kprototypes"])
+    subprocess.check_call(["pip", "install", "transformers"])
+
 
 
     print(f"Successful installation of the required dependencies necessary")
 
 
+# monitoring and logging with mlflow
+import mlflow
+import warnings
+warnings.filterwarnings('ignore')
 
+
+# custom imports
+
+from .data_processing import (
+        data_preprocessor, 
+        dimensionality_reduction, 
+        cross_validation,
+        )
+
+
+from .config import (
+        EXPERIMENT_NAME,
+        )
+TRACKING_URI = open("../.mlflow_uri").read().strip()
 
 
 
@@ -72,9 +99,32 @@ except ImportError as error:
 
 
 
+def dimensionality_reduction(data, method='tsne', n_components=2, random_state=42, *args, **kwargs):
+
+    """
+    Dimensionality reduction techniques
+
+    """
+
+    methods = {
+        'pca': PCA(n_components=n_components, random_state=random_state),
+        'tsne': TSNE(n_components=n_components, random_state=random_state),
+        'umap': UMAP(n_components=n_components, random_state=random_state)
+    }
+
+    if method in methods:
+        reduction_method = methods[method]
+        #return reduction_method.fit_transform(data)
+        return reduction_method
+    
+    else:
+        raise ValueError(f"The dimensionality reduction technique: '{method}' is currently not available.")
 
 
-def clustering_models(dataset, model='kmeans', n_clusters=2, *args, **kwargs):
+
+
+
+def clustering_models(data, model='kmeans', n_clusters=2, random_state=42, *args, **kwargs):
 
     """
     Clustering models
@@ -83,8 +133,8 @@ def clustering_models(dataset, model='kmeans', n_clusters=2, *args, **kwargs):
 
 
     models = {
-        'kmeans': KMeans(n_clusters),
-        'minibatch_kmeans': MiniBatchKMeans(n_clusters),
+        'kmeans': KMeans(n_clusters, random_state=random_state),
+        'minibatch_kmeans': MiniBatchKMeans(n_clusters, random_state=random_state),
         'kmode': KModes(n_clusters),
         'kprototypes': KPrototypes(n_clusters),
         'mean_shift': MeanShift(),
@@ -93,17 +143,26 @@ def clustering_models(dataset, model='kmeans', n_clusters=2, *args, **kwargs):
 
     if model in models:
         clustering_model = models[model]
-        return clustering_model.fit_predict(dataset)
+        #return clustering_model.fit_predict(data)
+        return clustering_model
+
     else:
         raise ValueError(f"The clustering model : '{model}' model is currently not available.")
 
 
-def text_processing(dataset, vectorizer='tfidf', *args, **kwargs):
+
+def text_vectorization(data, vectorizer='tfidf', *args, **kwargs):
 
     """
     Similarity matrix computation - Text vectorization
 
     """
+
+    # vectorizers = {
+    #     'tfidf': lambda d: TfidfVectorizer().fit_transform(d),
+    #     'cosine_similarity': lambda d: cosine_similarity(d),
+    #     'linear_kernel': lambda d: linear_kernel(d)
+    # }
 
     vectorizers = {
         'tfidf': lambda d: TfidfVectorizer().fit_transform(d),
@@ -113,14 +172,70 @@ def text_processing(dataset, vectorizer='tfidf', *args, **kwargs):
 
     if vectorizer in vectorizers:
         text_vectorizer = vectorizers[vectorizer]
-        return text_vectorizer(dataset)
+        return text_vectorizer(data)
     else:
         raise ValueError(f"The text vectorization method : '{vectorizer}' is currently not available.")
 
 
 
 
-def classification_models(dataset, labels, model='xgboost', random_state=42, *args, **kwargs):
+def model_pipeline(data):
+
+    """"
+    model pipeline for training
+        - dimensionality reduction
+        - clustering
+        - vectorization and similarity computation
+        - save model : object serialization
+        - save similarity matrix  : object serialization
+    
+    
+    """
+
+    pipeline = Pipeline([
+        ('dim_embed', TSNE(n_components=2)),
+        ('cluster_model', MiniBatchKMeans(n_clusters=5, random_state=42)),
+    ])
+
+
+    results = pipeline.fit_transform(data)
+
+    return results
+
+
+
+
+
+def content_vectorization_similarity(data, user_query):
+
+    """"
+    converting data to numerical rrepresentations
+    computing similarities
+
+    """
+
+    pass
+
+
+
+
+def content_recommender(data, user_query, track_feature_matrix, track_id_to_index, playlist_lenght=5, *args, **kwargs):
+
+    """"
+    mood based music content recommendater
+        search engine for querying users request
+
+    """
+
+
+    
+    pass 
+
+
+
+
+
+def classification_models(data, labels, model='xgboost', random_state=42, *args, **kwargs):
 
     """
     Classification models
@@ -140,28 +255,9 @@ def classification_models(dataset, labels, model='xgboost', random_state=42, *ar
 
     if model in models:
         classification_model = models[model]
-        return classification_model.fit(dataset, labels)
+        return classification_model.fit(data, labels)
     else:
         raise ValueError(f"The classification model: '{model}' model is currently not listed.")
-
-
-
-
-
-def content_recommender(dataset, *args, **kwargs):
-
-    """"
-    mood based music content recommendation model
-    
-    """
-
-    # TBA
-
-    pass
-
-
-
-
 
 
 

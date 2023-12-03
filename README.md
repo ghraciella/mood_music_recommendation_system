@@ -2,9 +2,9 @@
 
 ## MOOSIC : Your Mood Based Music Recommendation System
 
-Our data product is a mood based music recommender that fine-tunes and makes personalised music suggestions by introducing user input options with a focus on mood and genre. It aims to optimize recommendations based on one's ever-evolving music preferences, diverse taste and the complexity of listener's moods. It is user-centric and adaptable.
+Our data product is a mood based music recommender engine that fine-tunes and makes personalised music suggestions by introducing user input options with a focus on mood and genre. It aims to optimize recommendations based on one's ever-evolving music preferences, diverse taste and the complexity of listener's moods. It is user-centric and adaptable.
 
-__Objective__ : In this repo we challenge ourselves as Data Practitioners to come up with a mood based recommendations system for music using Spotify track metadata to give users a better listening experience. 
+__Objective__ : In this repo we challenge ourselves as Data Practitioners to come up with a mood based recommendations system for music using Spotify track metadata to give users a better listening experience. This was a 4-weeks project; from planning, implementation and to the demo presentation of our prototype.
 
 <br>
 
@@ -29,7 +29,7 @@ as a way to manage their mood based on their preference.
 * Website of our data product - Moosic : [MOOSIC WebApp Link](https://moosic.winderling.net)
 
 
-* Demo Presentation Slides of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Project Slides](/presentations/presentations/Moosic_Demo_Project_Slides.pdf)
+* Demo Presentation Slides of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Project Slides](/presentations/Moosic_Demo_Project_Slides.pdf)
 
 * Youtube Demo Video of our Capstone project - Moosic : [Moosic Demo (19.09.2023) - Video](https://youtu.be/kIyen_SHKwQ)
 
@@ -99,32 +99,36 @@ When we talked about why we don’t like the recommendations we figured out, tha
 
 > Why did we go with these two features mood and genre? Why is it important that music fits one's mood?
 
-The problem with music recommendations at present is that the recommended tracks often times don’t fit the listeners mood and as humans, we continuously experience changes in our moods over the course of time - be it days or hours. Thus, tracking every individuals mood can be complex and affected by various underlying factors for instance social, cultural and situational or psychological factor that might not always be possible to assess based on their listening habits or that of other users alone. 
+The problem we identified with music recommendations at present, is that the recommended tracks often times don’t fit the listeners mood and as humans. For example, Spotify uses a variety of factors to personalize the listening experience for each user. These factors include the user's listening history, their favorite songs and artists, and the genres and playlists they listen to. 
 
-For example Spotify uses a complex system of a variety of factors to personalize the listening experience for each user. These factors include the user's listening history, their favorite songs and artists, and the genres and playlists they listen to. 
+We decided to also use an important factor to us; the mood since we continuously experience changes in our moods over the course of time - be it days or hours. Thus, tracking every individuals mood can be complex and affected by various underlying factors for instance social, cultural and situational or psychological factor that might not always be possible to assess based on their listening habits or that of other users alone. 
 
-### __Mood management__ 
 
-From time immemorial and across diverse cultures, music has always been used not only as a way to express emotions but also as a tool for managing our moods. 
 
-Participants of a study,  conducted by British psychologists, responded that they use music to express emotions and manage their mood. Some reasons observed during the survey for why music was used were : 
+#### __Mood management__ 
+
+From time immemorial and across diverse cultures, music has always been used not only as a way to express emotions but also as a tool for managing our moods. Participants of a study, conducted by British psychologists, responded that they use music to express emotions and manage their mood. Some reasons observed during the survey for why music was used were : 
 
 * “To put them in the mood they want to be in”, - like feeling sad and wanting to feel better.
 * “To get them into a certain mood or feel a certain way” 
 * “To put them in a particular mood or get them out of a particular mood”
 * “To put them in the mood for something” e.g. party, learning or working out etc.
-* Reference Source: __Why do we listen to music? A uses and gratifications analysis by Adam J. Lonsdale and Adrian C. North, p.120. Published in: British Journal of Psychology (2011), 102, 108–134.__
+* __Reference Sources__:
+  - __Why do we listen to music? A uses and gratifications analysis by Adam J. Lonsdale and Adrian C. North, p.120. Published in: British Journal of Psychology (2011), 102, 108–134.__
+  - __A Connotative Space for Supporting Movie Affective Recommendation by Benini et al. ; A 12-Point Circumplex Structure of Core Affect by M. Yik, J. Russel & J. Steiger. :Emotion Label Enhancement via Emotion Wheel and Lexicon by Zeng et al.__ 
+
 
 <br>
 
-### __Dominant vs Diverse Music Genre__  
+#### __Dominant vs Diverse Music Genre__  
 
-Genre was also a key factor we considered because it was another problem encounter by us and other users when getting recommendations for music.
+Genre was also a key factor we considered because it was another problem encounter by us and other users when getting recommendations for music. Aside from mood the algorithm has another problem, it can't make good song suggestions for people who like to listen to music from multiple genres. 
 
-Aside from mood the Algorithm has Another problem: it can't make good song suggestions for people who like to listen to music from multiple genres. The result is that these users often only get song suggestions from their most dominant music genre. But they want to enjoy music from other genres as well and therefore demand - from a good recommendations engine - divers recommendations, as they are divers listeners. 
+<br/>
 
-So, when we are sad on one day for example and listen extensively to sad songs, the algorithm is bound to recommend these songs again to the user, 
-even if the user isn’t in a sad mood any more.
+The result is that these users often only get song suggestions from their most dominant music genre. But they want to enjoy music from other genres as well and therefore demand - from a good recommendations engine - divers recommendations, as they are divers listeners. So, when we are sad on one day for example and listen extensively to sad songs, the algorithm is bound to recommend these songs again to the user, even if the user isn’t in a sad mood any more.
+
+<br/>
 
 Source : [How Does the Spotify Algorithm work in 2023? The Spotify Algorithm Explained | iSpyTunes ](https://www.ispytunes.com/post/spotify-algorithm-explained)
 
@@ -145,7 +149,7 @@ Source : [How Does the Spotify Algorithm work in 2023? The Spotify Algorithm Exp
 <br>
 
 
-You will find __documentations__ of our thought processes, __mind maps__ from our brainstorming sessions, Jupyter Notebooks for our __EDAs__, our __recommendations system model__ and our final product (recommendations model) running in a __web application__.
+You will find __documentations__ of our thought processes during our prototyping phase, __mind maps__ from our brainstorming sessions, notebooks and scripts for our __data engineering__, __analysis__, __models__,  __recommendations engine__ and our final product (recommendations model) running in a __web application__.  The project would be continually updated even after the prototyping phase, to integrate more functionalities, better usage and because it is fun.
 
 <br>
 
@@ -229,12 +233,12 @@ mood_music_recommendation_system/
 │   │   ├── hypothesis_and_eda.ipynb
 │   │   ├── feature_engineering.ipynb
 │   │   ├── models.ipynb
-│   │   └── hypothesis_and_eda.ipynb
+│   │   └── ...
 │   │
 │   └── src_scripts/
 │       ├── eda_and_visualizations.py
 │       ├── feature_engineering.py
-│       ├── moosic_models.py
+│       ├── models.py
 │       ├── utils.py
 │       ├── tests.py
 │       ├── sql_functions.py
@@ -247,8 +251,8 @@ mood_music_recommendation_system/
 │   └── ...
 │
 ├── services/                  # 
-│   ├── nifi/                  # Data ingestion and migration
-│   │   ├── nifi_flow_file.xml
+│   ├── some_data_ingestion_service/                  # Data ingestion and migration
+│   │   ├── ...
 │   │   ├── ...
 │   │   └── ...
 │   │
@@ -269,6 +273,8 @@ mood_music_recommendation_system/
 │
 ├── ... 
 ├── docker-compose.yml   # Configuration file - services and their interactions
+├── Dockerfile   # 
+├── Makefile.yml   # 
 ├── README.md            # About project
 ├── requirements.txt     # Dependencies file 
 └── requirements_dev.txt # Dependencies file for dev
